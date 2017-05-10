@@ -33,7 +33,7 @@ public class Launch : MonoBehaviour {
 			Rigidbody rigidbody = go.GetComponent<Rigidbody> ();
 			rigidbody.velocity = rigidbody.transform.forward * force;
 			rigidbody.useGravity = true;
-			Debug.Log ("Name: " + go.name + " Position: " + cannonBall.transform.position);
+			// Debug.Log ("Name: " + go.name + " Position: " + cannonBall.transform.position);
 		}
 	}
 }
