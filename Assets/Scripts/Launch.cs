@@ -25,15 +25,21 @@ public class Launch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyUp (KeyCode.Space)) 
-		{
-			GameObject go = (GameObject)GameObject.Instantiate (cannonBall);
-			go.transform.position = this.transform.position;
-			go.transform.rotation = this.transform.rotation;
-			Rigidbody rigidbody = go.GetComponent<Rigidbody> ();
-			rigidbody.velocity = rigidbody.transform.forward * force;
-			rigidbody.useGravity = true;
-			// Debug.Log ("Name: " + go.name + " Position: " + cannonBall.transform.position);
-		}
+		
 	}
+
+    void OnGUI()
+    {
+        GUI.color = Color.red;
+        if (GUI.Button(new Rect(0, 100, 250, 50), "Fire"))
+        {
+            GameObject go = (GameObject)GameObject.Instantiate(cannonBall);
+            go.transform.position = this.transform.position;
+            go.transform.rotation = this.transform.rotation;
+            Rigidbody rigidbody = go.GetComponent<Rigidbody>();
+            rigidbody.velocity = rigidbody.transform.forward * force;
+            rigidbody.useGravity = true;
+            // Debug.Log ("Name: " + go.name + " Position: " + cannonBall.transform.position);
+        }
+    }
 }

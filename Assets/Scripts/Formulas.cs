@@ -6,6 +6,7 @@ public class Formulas : MonoBehaviour {
 
 	// Public Variables
 	public GameObject newestProjectile;
+    public GUIStyle myGUIStyle;
 
 	// Private Variables
 	private Vector3 velocity = Vector3.zero;
@@ -46,9 +47,9 @@ public class Formulas : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.color = Color.cyan;
-		GUI.Label (new Rect (0, 0, 400, 200), "Final Horizontal Position: " + range);
-		GUI.Label (new Rect (0, 25, 200, 200), "Max Height: " + height);
+		GUI.color = Color.green;
+		GUI.Button(new Rect (0, 0, 250, 50), "Final Horizontal Position: " + range);
+		GUI.Button(new Rect (0, 50, 250, 50), "Max Height: " + height);
 		// GUI.Label (new Rect (0, 50, 200, 200), "Current Position: ");
 	}
 }
